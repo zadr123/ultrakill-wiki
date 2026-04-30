@@ -33,7 +33,7 @@ include 'header.php';
     </div>
 
     <div class="page-actions">
-        <a href="index.php" class="btn">← На главную</a>
+        <a href="index.php" class="btn">На главную</a>
     </div>
 </article>
 
