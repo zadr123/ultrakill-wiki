@@ -1,9 +1,5 @@
 <?php
-require_once 'data.php';  // ← подключаем статьи из отдельного файла
-
-// =====================================================
-// ЛОГИКА ПОЛУЧЕНИЯ ТЕКУЩЕЙ СТАТЬИ
-// =====================================================
+require_once 'data.php';
 $article_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
 if (!isset($all_articles[$article_id])) {
@@ -14,8 +10,6 @@ $article = $all_articles[$article_id];
 $page_title = $article['title'];
 include 'header.php';
 
-// Увеличиваем счётчик просмотров
-$article['views']++;
 ?>
 
 <article class="wiki-page">
@@ -23,7 +17,7 @@ $article['views']++;
     
     <div class="page-meta">
         <span class="category"><?php echo htmlspecialchars($article['category']); ?></span>
-        <span class="views">👁️ <?php echo $article['views']; ?> просмотров</span>
+        <span class="views"><?php echo $article['views']; ?> просмотров</span>
     </div>
 
     <div class="page-with-image">
